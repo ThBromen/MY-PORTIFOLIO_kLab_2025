@@ -92,7 +92,11 @@ body {
 .navbar-links a:hover::after {
     width: 100%;
 }
-
+.contact-menu{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .contact-btn {
     background: var(--gradient-primary);
     color: white;
@@ -658,6 +662,12 @@ body {
     #contact {
         padding: 3rem 3%;
     }
+  .contact-menu{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 }
 
 @media (max-width: 768px) {
@@ -729,6 +739,11 @@ body {
     .headline {
         font-size: 2rem;
     }
+  .contact-menu{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 }
 
 @media (max-width: 480px) {
@@ -774,6 +789,11 @@ body {
         padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
     }
+.contact-menu{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 }
 
 /* ===== ANIMATIONS ===== */
@@ -834,7 +854,11 @@ body {
         height: 100%;
         gap: 3rem;
     }
-    
+    .contact-menu{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
     .navbar-links li {
         opacity: 0;
         transform: translateX(-50px);
