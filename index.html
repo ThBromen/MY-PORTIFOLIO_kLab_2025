@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
-    <!-- <script defer src="/js/script.js"></script> -->
     <title>My Portfolio</title>
   </head>
   <body>
@@ -23,17 +22,16 @@
       </div>
       <div class="navbar-links">
         <ul class="menu" id="menuLinks">
-          <li><a href="/index.html">HOME</a></li>
+          <li><a href="#home">HOME</a></li>
           <li><a href="#about">ABOUT</a></li>
           <li><a href="#service">SERVICES</a></li>
           <li><a href="#portfolio">PORTFOLIO</a></li>
+          <li><a href="#contact" class="contact-bt">CONTACT ME</a></li>
         </ul>
       </div>
       <div class="contact-menu">
         <a
           href="#contact"
-          target="_blank"
-          rel="noopener noreferrer"
           class="contact-btn"
         >
           CONTACT ME
@@ -43,7 +41,7 @@
     </nav>
 
     <!-- ===== HERO / HOME ===== -->
-    <div class="home-page">
+    <div class="home-page" id="home">
       <div class="content">
         <h3>HELLO</h3>
         <h1>I'm H. Theogene</h1>
@@ -51,7 +49,7 @@
         <br />
         <p>
           Full-stack Engineer with a background in computer and software
-          engineering.Skilled in Node.js, React.js, CSS, HTML, Java, and React
+          engineering. Skilled in Node.js, React.js, CSS, HTML, Java, and React
           Native. Excels in strategy analysis and passionate about software
           development. <br /><br />
           Let's connect to explore collaborative opportunities.
@@ -159,7 +157,7 @@
         <div>
           <h2>DEVELOPMENT</h2>
           <img alt="Development" src="/img/pc-closeup.jpg" />
-          <p>We’re problem solvers. We listen, observe, create and validate
+          <p>We're problem solvers. We listen, observe, create and validate
             and also we implement your idea into good solution.
             click on button bellow to explore more</p>
           <a href="#contact">Offer-service</a>
@@ -193,7 +191,7 @@
         <div>
           <h2>DATABASE DESIGN</h2>
           <img alt="Database Design" src="/img/dbdb.jpg" />
-          <p>We’re problem solvers. We listen, observe, create and validate
+          <p>We're problem solvers. We listen, observe, create and validate
             and also we implement your idea into good solution.
              click on button bellow to explore more</p>
           <a href="#contact">Offer-service</a>
@@ -223,7 +221,7 @@
             A weather web app delivers real-time forecasts and current conditions for any location 
             through a simple, user-friendly interface.
           </p>
-          <a href="https://klab-weather-website.netlify.app/">View Project</a>
+          <a rel="noopener noreferrer" href="https://klab-weather-website.netlify.app/" target="_blank">View Project</a>
         </div>
 
         <div class="port">
@@ -234,7 +232,7 @@
             simple, interactive interface.
             For more info click button below
           </p>
-          <a href="https://to-do-app-by-bromen.netlify.app/">View Project</a>
+          <a rel="noopener noreferrer" href="https://to-do-app-by-bromen.netlify.app/" target="_blank">View Project</a>
         </div>
 
         <div class="port">
@@ -245,7 +243,7 @@
             a virtual pen with intuitive input controls.
             For more info click button below
           </p>
-          <a href="https://sketch12.netlify.app/">View Project</a>
+          <a rel="noopener noreferrer" href="https://sketch12.netlify.app/" target="_blank">View Project</a>
         </div>
         <div class="port">
           <img alt="Portfolio Website" src="/img/portfolio.webp" />
@@ -255,7 +253,7 @@
             design and also show my experience in tech.
             For more info click button below
           </p>
-          <a href="https://my-portifolio-react-js-thbromens-projects.vercel.app/">View Project</a>
+          <a rel="noopener noreferrer" href="https://my-portifolio-react-js-thbromens-projects.vercel.app/" target="_blank">View Project</a>
         </div>
       </div>
     </section>
@@ -322,69 +320,68 @@
         </div>
       </div>
     </section>
-<!-- ===== CONTACT ===== -->
-<a class="myb" href="#contact">CONTACT</a>
-<section id="contact">
 
-
-  <div class="contact-container">
-    <div class="foam">
-      <h1>Contact Us</h1>
-      <form action="/" method="get" onsubmit="return validateForm()">
-        <div>
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required />
-        </div>
-        <div>
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Enter message subject" required />
-        </div>
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Enter your message" required></textarea>
-        </div>
-        <div>
-          <input id="submit" type="submit" value="Submit" />
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="info">
-      <div class="info-item">
-        <img alt="Location" src="/Icons/location.png" />
-        <div>
-          <p><strong>Location:</strong> <a href="https://goo.gl/maps/xv73MZ2nUVCW6xRb8" target="_blank" rel="noopener noreferrer">Google Maps Link</a></p>
-          <p>Visit my studio</p>
+    <!-- ===== CONTACT ===== -->
+    <a class="myb" href="#contact">CONTACT</a>
+    <section id="contact">
+      <div class="contact-container">
+        <div class="foam">
+          <h1>Contact Us</h1>
+          <form action="/" method="get" onsubmit="return validateForm()">
+            <div>
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Enter message subject" required />
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Enter your message" required></textarea>
+            </div>
+            <div>
+              <input id="submit" type="submit" value="Submit" />
+            </div>
+          </form>
         </div>
       </div>
 
-      <div class="info-item">
-        <img alt="Email" src="/Icons/mail.png" />
-        <div>
-          <p><strong>Email:</strong> hashimwimanatheogene34@gmail.com</p>
-          <p>Mon to Fri (10 am – 8 pm)</p>
-        </div>
-      </div>
+      <div class="info">
+          <div class="info-item">
+            <img alt="Location" src="/Icons/location.png" />
+            <div>
+              <p><strong>Location:</strong> <a href="https://goo.gl/maps/xv73MZ2nUVCW6xRb8" target="_blank" rel="noopener noreferrer">Google Maps Link</a></p>
+              <p>Visit my studio</p>
+            </div>
+          </div>
 
-      <div class="info-item">
-        <img alt="Phone" src="/Icons/phone.png" />
-        <div>
-          <p><strong>Phone:</strong> +250 784020043</p>
-          <p><strong>Fax:</strong> +54 123 654 896</p>
-        </div>
-      </div>
-    </div>
-</section>
+          <div class="info-item">
+            <img alt="Email" src="/Icons/mail.png" />
+            <div>
+              <p><strong>Email:</strong> hashimwimanatheogene34@gmail.com</p>
+              <p>Mon to Fri (10 am – 8 pm)</p>
+            </div>
+          </div>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <p>&copy; 2025 Bromen. All rights reserved.</p>
-</footer>
+          <div class="info-item">
+            <img alt="Phone" src="/Icons/phone.png" />
+            <div>
+              <p><strong>Phone:</strong> +250 784020043</p>
+              <p><strong>Fax:</strong> +54 123 654 896</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>&copy; 2025 Bromen. All rights reserved.</p>
+    </footer>
 
     <script defer src="/js/script.js"></script>
   </body>

@@ -1,33 +1,63 @@
 // ===== NAVBAR & MOBILE MENU =====
 let navbar = document.querySelector(".navbar");
 let menuLinks = document.getElementById("menuLinks");
+let toggleButton = document.querySelector(".toggle-button");
 
-// Toggle mobile menu
+// Toggle mobile menu function
 function toggleMenu() {
-  menuLinks.classList.toggle("Show-Menu");
+  const navbarLinks = document.querySelector(".navbar-links");
+  navbarLinks.classList.toggle("Show-Menu");
   
   // Add/remove body scroll lock when menu is open
-  if (menuLinks.classList.contains("Show-Menu")) {
+  if (navbarLinks.classList.contains("Show-Menu")) {
     document.body.style.overflow = 'hidden';
+    toggleButton.style.transform = 'rotate(180deg)';
   } else {
     document.body.style.overflow = 'auto';
+    toggleButton.style.transform = 'rotate(0deg)';
   }
 }
 
-// Close mobile menu when clicking on menu links
-document.querySelectorAll('.navbar-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    menuLinks.classList.remove("Show-Menu");
-    document.body.style.overflow = 'auto';
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Close mobile menu when clicking on menu links
+  const navLinks = document.querySelectorAll('.navbar-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        const navbarLinks = document.querySelector(".navbar-links");
+        navbarLinks.classList.remove("Show-Menu");
+        document.body.style.overflow = 'auto';
+        if (toggleButton) {
+          toggleButton.style.transform = 'rotate(0deg)';
+        }
+      }
+    });
   });
-});
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target) && menuLinks.classList.contains("Show-Menu")) {
-    menuLinks.classList.remove("Show-Menu");
-    document.body.style.overflow = 'auto';
-  }
+  // Close mobile menu when clicking outside navbar
+  document.addEventListener('click', (e) => {
+    const navbarLinks = document.querySelector(".navbar-links");
+    if (!navbar.contains(e.target) && navbarLinks.classList.contains("Show-Menu")) {
+      navbarLinks.classList.remove("Show-Menu");
+      document.body.style.overflow = 'auto';
+      if (toggleButton) {
+        toggleButton.style.transform = 'rotate(0deg)';
+      }
+    }
+  });
+
+  // Handle window resize to reset mobile menu
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      const navbarLinks = document.querySelector(".navbar-links");
+      navbarLinks.classList.remove("Show-Menu");
+      document.body.style.overflow = 'auto';
+      if (toggleButton) {
+        toggleButton.style.transform = 'rotate(0deg)';
+      }
+    }
+  });
 });
 
 // ===== NAVBAR SCROLL EFFECT =====
@@ -136,16 +166,20 @@ function showAlert(message, type) {
 }
 
 // ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
 });
 
@@ -203,8 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       if (validateForm()) {
-        // Here you can add actual form submission logic
-        // For now, we'll just reset the form after showing success message
+        // Reset form after successful validation
         setTimeout(() => {
           form.reset();
           inputs.forEach(input => {
@@ -216,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ===== ADD CSS ANIMATIONS =====
+// ===== ADD CSS ANIMATIONS FOR ALERTS =====
 const style = document.createElement('style');
 style.textContent = `
   @keyframes slideDown {
